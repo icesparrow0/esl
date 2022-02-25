@@ -7,7 +7,7 @@
 Installation can be done as usual:
 
 ```
-$ go get github.com/vma/esl
+$ go get github.com/icesparrow0/esl
 ```
 
 **How it works**
@@ -42,7 +42,7 @@ const (
 
 func main() {
         handler := &Handler{}
-        con, err := esl.NewConnection("127.0.0.1:8021", handler)
+        con, err := esl.NewConnection("127.0.0.1:8021", "ClueCon", handler)
         if err != nil {
                 log.Fatal("ERR connecting to freeswitch:", err)
         }
@@ -82,11 +82,4 @@ func (h *Handler) OnEvent(con *esl.Connection, ev *esl.Event) {
         }
 }
 ```
-
-
-**TODO**
-
-- [ ] add documentation
-- [ ] add tests
-- [ ] more usage examples
 
